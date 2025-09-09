@@ -1,14 +1,20 @@
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Prometheus;
+using Service01.API;
+using Service01.Features.Rate.Queries;
 using Service01.Models.Models;
 using Service01.Services;
 using Service01.Services.BrokerService;
 using Service01.Services.BufferService;
 using Service01.Services.Health;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.RegisterMapsterConfiguration();
 builder.Services.Configure<BufferOptionModel>(builder.Configuration.GetSection("Buffer"));
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IBrokerService, FSBrokerService>();
@@ -28,6 +34,17 @@ builder.Services.AddHealthChecksUI(opt =>
 	.AddInMemoryStorage();
 
 builder.Services.AddControllers();
+builder.Services.AddApiVersioning(config =>
+{
+	config.ApiVersionReader = new HeaderApiVersionReader("api-version");
+	config.DefaultApiVersion = new ApiVersion(1, 0);
+	config.AssumeDefaultVersionWhenUnspecified = true;
+});
+builder.Services.AddMediatR(cfg =>
+	cfg.RegisterServicesFromAssemblies([
+		Assembly.GetExecutingAssembly(), 
+		typeof(GetRateQueryHandler).Assembly,
+		]));
 
 var app = builder.Build();
 
