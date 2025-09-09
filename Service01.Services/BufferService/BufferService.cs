@@ -27,7 +27,8 @@ namespace Service01.Services.BufferService
 			var keyRequest = GetKey(request);
 			var result = new RateResponseModel();
 
-			var dateTimeEnd = DateTime.Now + TimeSpan.FromSeconds(_bufferOption.TimeRequestBucket);
+			var dt = DateTime.Now;
+			var dateTimeEnd = dt + TimeSpan.FromSeconds(_bufferOption.TimeRequestBucket);
 			var newItemState = new BufferItemState()
 			{
 				DateTimeEnd = dateTimeEnd,
@@ -38,7 +39,7 @@ namespace Service01.Services.BufferService
 				newItemState
 			});
 
-			var existsItemState = bufferItemState.FirstOrDefault(x => x.DateTimeEnd.Ticks <= dateTimeEnd.Ticks);
+			var existsItemState = bufferItemState.FirstOrDefault(x => x.DateTimeEnd.Ticks >= dt.Ticks);
 			if (existsItemState is null) {
 				existsItemState = newItemState;
 				bufferItemState.Add(newItemState);
@@ -52,7 +53,7 @@ namespace Service01.Services.BufferService
 
 				TimeSpan differenceDelay = dateTimeEnd - DateTime.Now;
 
-				if (differenceDelay > TimeSpan.FromMicroseconds(0))
+				if (differenceDelay > TimeSpan.FromMicroseconds(0) && _bufferOption.SendResponseAfterFillRequestBucket)
 				{
 					await Task.Delay(differenceDelay);
 				}

@@ -12,7 +12,7 @@ namespace Service01.Services.BrokerService
 	public class FSBrokerService : IBrokerService
 	{
 		private static HashSet<string> _files = new HashSet<string>();
-		private SemaphoreSlim _semaphore { get; set; } = new SemaphoreSlim(1, 1);
+		private SemaphoreSlim _semaphore { get; set; } = new SemaphoreSlim(1);
 		private BufferOptionModel _bufferOption { get; set; }
 		private IValidateService _validateService { get; set; }
 		private FileSystemWatcher _watcher { get; set; }
@@ -71,11 +71,11 @@ namespace Service01.Services.BrokerService
 				result.StatusCode = (int)HttpStatusCode.RequestTimeout;
 			}
 
-			_logger.LogInformation($"Data from FileBroker: {JsonConvert.SerializeObject(result)}");
-
 			EnsureClean();
 
 			_validateService.Validate(result);
+
+			_logger.LogInformation($"Data from FileBroker: {JsonConvert.SerializeObject(result)}");
 
 			return result;
 		}
