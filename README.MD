@@ -19,6 +19,29 @@
 
 ![This is a scheme image.](/images/scheme.png)
 
+
+## Metrics
+
+Для Prometheuse развернуты метрики доступные по url `/metrics`
+
+![metrics](/images/metrics.png)
+
+## HealthCheck
+
+Для получения состояния о работе компонентов приложения, добавлены HealthChecks, а также HealthCheck UI
+HealthCheck UI доступен по url `/healthchecks-ui`
+
+![healthchecks-ui](/images/healthchecks-ui.png)
+
+Общее состояние доступно по url `/health`
+Более подробное состояние доступно по url `/healthAPI`
+
+![healthAPI](/images/healthAPI.png)
+
+## Links
+
+По ссылке развернуто данное приложение и можно ознакомится с данными [service01.mathete.ru](https://service01.matchete.ru/)
+
 ## License
 
 MIT
