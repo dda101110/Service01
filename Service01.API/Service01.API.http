@@ -7,3 +7,17 @@ Accept: application/json
 
 GET {{Service01.API_HostAddress}}/metrics/
 Accept: application/json
+
+###
+
+GET {{Service01.API_HostAddress}}/api/rate/USD/EUR/001
+Accept: application/json
+###
+GET {{Service01.API_HostAddress}}/api/rate/USD/EUR/002
+Accept: application/json
+###
+GET {{Service01.API_HostAddress}}/api/rate/CAD/RUB/001
+Accept: application/json
+###
+GET {{Service01.API_HostAddress}}/api/rate/CAD/RUB/002
+Accept: application/json
