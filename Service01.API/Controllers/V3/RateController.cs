@@ -22,11 +22,11 @@ namespace Service01.API.Controllers.V3
 		{
 			var request = new GetRateQuery()
 			{
-				Currency1 = currency1,
-				Currency2 = currency2,
+				Cur1 = currency1,
+				Cur2 = currency2,
 				Bank = bank ?? "",
-				HttpMethod = Request.Method,
-				HttpPath = Request.Path,
+				Method = Request.Method,
+				Path = Request.Path,
 			};
 
 			var response = await _mediator.Send(request);
