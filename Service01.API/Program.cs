@@ -28,6 +28,7 @@ builder.Services.AddHealthChecksUI(opt =>
 	.AddInMemoryStorage();
 
 builder.Services.AddControllers();
+builder.Services.AddApiVersioning();
 
 var app = builder.Build();
 
