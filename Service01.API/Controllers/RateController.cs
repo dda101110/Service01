@@ -27,6 +27,7 @@ namespace Service01.API.Controllers
 			{
 				Currency1 = currency1,
 				Currency2 = currency2,
+				Bank = bank ?? "",
 				HttpMethod = httpMethod,
 				HttpPath = httpPath,
 			};

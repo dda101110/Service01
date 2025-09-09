@@ -46,7 +46,7 @@ namespace Service01.Services.BufferService
 
 			var isFirstRequest = existsItemState.DateTimeEnd.Ticks == dateTimeEnd.Ticks;
 			if (isFirstRequest) {
-				_logger.LogInformation($"Make first request to BrokerService from RequestBacket");
+				_logger.LogDebug($"Make first request to BrokerService from RequestBacket");
 
 				existsItemState.Item = await _brokerService.GetRateAsync(request);
 
@@ -65,11 +65,14 @@ namespace Service01.Services.BufferService
 				existsItemState.Semaphores = new ConcurrentQueue<SemaphoreSlim>();
 			} else
 			{
-				existsItemState.Semaphores.Enqueue(_semaphore);
+				if (existsItemState.Item is null)
+				{
+					existsItemState.Semaphores.Enqueue(_semaphore);
 
-				_logger.LogInformation($"Append request in RequestBacket");
+					_logger.LogDebug($"Append request in RequestBacket");
 
-				await _semaphore.WaitAsync();
+					await _semaphore.WaitAsync();
+				}
 			}
 
 			result = existsItemState.Item;
