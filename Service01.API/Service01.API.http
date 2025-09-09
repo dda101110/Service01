@@ -21,3 +21,10 @@ Accept: application/json
 ###
 GET {{Service01.API_HostAddress}}/api/rate/CAD/RUB/002
 Accept: application/json
+
+###
+GET {{Service01.API_HostAddress}}/api/v1/rate/USD/EUR/001
+###
+GET {{Service01.API_HostAddress}}/api/v2/rate/USD/EUR/001
+###
+GET {{Service01.API_HostAddress}}/api/v3/rate/USD/EUR/001

@@ -8,7 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Mapster" Version="7.4.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.8" />
+    <PackageReference Include="MediatR" Version="13.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Service01.Models\Service01.Models.csproj" />
+    <ProjectReference Include="..\Service01.Services\Service01.Services.csproj" />
   </ItemGroup>
 
 </Project>
