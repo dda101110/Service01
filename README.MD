@@ -41,7 +41,7 @@ HealthCheck UI доступен по url `/healthchecks-ui`
 
 ## Links
 
-По ссылке развернуто данное приложение и можно ознакомится с данными [service01.mathete.ru](https://service01.matchete.ru/)
+По ссылке развернуто данное приложение и можно ознакомится с данными [service01.mathete.ru](https://service01.matchete.ru/metrics)
 
 ## License
 
