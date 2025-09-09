@@ -33,8 +33,9 @@ HealthCheck UI доступен по url `/healthchecks-ui`
 
 ![healthchecks-ui](/images/healthchecks-ui.png)
 
-Общее состояние доступно по url `/health`
-Более подробное состояние доступно по url `/healthAPI`
+Общее состояние приложения доступно по url `/health`
+
+Более подробное состояние приложения доступно по url `/healthAPI`
 
 ![healthAPI](/images/healthAPI.png)
 
