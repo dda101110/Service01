@@ -38,6 +38,7 @@ namespace Service01.Services
 					{
 						model.Success = true;
 						model.StatusCode = statusCode;
+						model.ErrorText = string.Empty;
 					}
 					else
 					{
