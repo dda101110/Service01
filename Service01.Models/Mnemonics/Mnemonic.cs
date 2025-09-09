@@ -8,5 +8,9 @@
 		public const string INVALID_FORMAT = "Invalid format";
 
 		public const int UNKNOWN_CODE = 0;
+
+		public const string HEALTH_CHECK_RESULT_HEALTHY = "Все системы в норме";
+		public const string HEALTH_CHECK_RESULT_BROKER_PATH_EMPTY = "Не задан путь директории (BrokerPath) для брокера";
+		public const string HEALTH_CHECK_RESULT_BROKER_PATH_INVALID = "Не корректный путь директории (BrokerPath) для брокера";
 	}
 }
