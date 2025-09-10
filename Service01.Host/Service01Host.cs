@@ -1,4 +1,6 @@
+using MediatR;
 using Microsoft.Extensions.Options;
+using Service01.Features;
 using Service01.Models.Models;
 using System.Net;
 using System.Net.Sockets;
@@ -11,12 +13,13 @@ namespace Service01.Host
 		private Service01HostOption _option;
 		private readonly ILogger<Service01Host> _logger;
 		private readonly TcpListener _listener;
+		private readonly IServiceProvider _services;
 
-		public Service01Host(IOptions<Service01HostOption> option, ILogger<Service01Host> logger)
+		public Service01Host(IOptions<Service01HostOption> option, IServiceProvider services, ILogger<Service01Host> logger)
 		{
 			var _option = option.Value;
+			_services = services;
 			_listener = new TcpListener(IPAddress.Parse(_option.Host), _option.Port);
-
 			_logger = logger;
 		}
 
@@ -30,10 +33,12 @@ namespace Service01.Host
 				try
 				{
 					var client = await _listener.AcceptTcpClientAsync(stoppingToken);
-					_ = Task.Run(() => HandleClientAsync(client, stoppingToken));
+					_ = HandleClientAsync(client, stoppingToken);
 				}
 				catch (OperationCanceledException)
 				{
+					_logger.LogError("OperationCanceled");
+
 					break;
 				}
 				catch (Exception ex)
@@ -48,30 +53,47 @@ namespace Service01.Host
 
 		private async Task HandleClientAsync(TcpClient client, CancellationToken ct)
 		{
+			using var scope = _services.CreateScope();
 			using var _ = client;
 			using var ns = client.GetStream();
 			using var reader = new StreamReader(ns, Encoding.UTF8, leaveOpen: true);
-			await using var writer = new StreamWriter(ns, Encoding.UTF8) { AutoFlush = true };
+			using var writer = new StreamWriter(ns, Encoding.UTF8, leaveOpen: true) { AutoFlush = true };
 
 			var remote = client.Client.RemoteEndPoint;
 			_logger.LogInformation("Client connected {Remote}", remote);
 
 			while (!ct.IsCancellationRequested)
 			{
-				string? line;
+				string? clientRequest;
+
 				try
 				{
-					line = await reader.ReadLineAsync(ct);
+					clientRequest = await reader.ReadLineAsync(ct);
 				}
-				catch (IOException)
+				catch (IOException ex)
 				{
-					break; // client disconnected
+					_logger.LogError("Exception: {Data}", ex.Message);
+
+					break;
 				}
 
-				if (line == null) break;
+				if (clientRequest == null)
+				{
+					break;
+				}
 
-				_logger.LogInformation("Received: {Data}", line);
-				await writer.WriteLineAsync($"Echo: {line}");
+				_logger.LogInformation("Service01.Host Received: {Data}", clientRequest);
+
+				var request = clientRequest.ToGetRateQuery();
+				var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
+
+				var response = await mediator.Send(request, ct);
+
+				var responseMessage = response.ToResponseMessage();
+
+				await writer.WriteLineAsync(responseMessage);
+
+				_logger.LogInformation("Service01.Host Response: {response}", responseMessage);
 			}
 
 			_logger.LogInformation("Client disconnected {Remote}", remote);
