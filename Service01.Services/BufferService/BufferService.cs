@@ -9,11 +9,11 @@ namespace Service01.Services.BufferService
 	{
 		private static ConcurrentDictionary<string, List<BufferItemState>> _buffer { get; set; } = new ConcurrentDictionary<string, List<BufferItemState>>();
 		private IBrokerService _brokerService { get; set; }
-		private BufferOptionModel _bufferOption { get; set; }
+		private Service01Option _bufferOption { get; set; }
 		private ILogger<BufferService> _logger { get; set; }
 		private SemaphoreSlim _semaphore { get; set; } = new SemaphoreSlim(1, 1);
 
-		public BufferService(IBrokerService brokerService, IOptions<BufferOptionModel> bufferOption, ILogger<BufferService> logger)
+		public BufferService(IBrokerService brokerService, IOptions<Service01Option> bufferOption, ILogger<BufferService> logger)
 		{
 			_brokerService = brokerService;
 			_bufferOption = bufferOption.Value;

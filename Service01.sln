@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUtils.Shared", "Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service01.Features", "Service01.Features\Service01.Features.csproj", "{29CC5112-E776-444E-AC39-094FB9919F54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service01.Host", "Service01.Host\Service01.Host.csproj", "{5D3E79B9-1F2B-4120-971C-2FC781750EF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{29CC5112-E776-444E-AC39-094FB9919F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29CC5112-E776-444E-AC39-094FB9919F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29CC5112-E776-444E-AC39-094FB9919F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D3E79B9-1F2B-4120-971C-2FC781750EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3E79B9-1F2B-4120-971C-2FC781750EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3E79B9-1F2B-4120-971C-2FC781750EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3E79B9-1F2B-4120-971C-2FC781750EF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

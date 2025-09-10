@@ -12,9 +12,9 @@ namespace Service01.Services.Health
 {
 	public class HealthCheckMemory : IHealthCheck
 	{
-		private BufferOptionModel _bufferOption { get; set; }
+		private Service01Option _bufferOption { get; set; }
 
-		public HealthCheckMemory(IOptions<BufferOptionModel> bufferOption)
+		public HealthCheckMemory(IOptions<Service01Option> bufferOption)
 		{
 			_bufferOption = bufferOption.Value;
 		}
