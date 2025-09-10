@@ -7,9 +7,9 @@ namespace Service01.Services.Health
 {
 	public class HealthCheckBrokerPath : IHealthCheck
 	{
-		private BufferOptionModel _bufferOption { get; set; }
+		private Service01Option _bufferOption { get; set; }
 
-		public HealthCheckBrokerPath(IOptions<BufferOptionModel> bufferOption)
+		public HealthCheckBrokerPath(IOptions<Service01Option> bufferOption)
 		{
 			_bufferOption = bufferOption.Value;
 		}

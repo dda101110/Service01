@@ -15,7 +15,7 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.RegisterMapsterConfiguration();
-builder.Services.Configure<BufferOptionModel>(builder.Configuration.GetSection("Buffer"));
+builder.Services.Configure<Service01Option>(builder.Configuration.GetSection("Service01"));
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IBrokerService, FSBrokerService>();
 builder.Services.AddScoped<IBufferService, BufferService>();

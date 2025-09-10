@@ -13,7 +13,7 @@ namespace Service01.Services.BrokerService
 	{
 		private static HashSet<string> _files = new HashSet<string>();
 		private SemaphoreSlim _semaphore { get; set; } = new SemaphoreSlim(1);
-		private BufferOptionModel _bufferOption { get; set; }
+		private Service01Option _bufferOption { get; set; }
 		private IValidateService _validateService { get; set; }
 		private FileSystemWatcher _watcher { get; set; }
 		private string? _filePath { get; set; }
@@ -23,7 +23,7 @@ namespace Service01.Services.BrokerService
 		private ILogger<FSBrokerService> _logger { get; set; }
 		private object _locker = new object();
 
-		public FSBrokerService(IOptions<BufferOptionModel> bufferOption, IValidateService validateService, ILogger<FSBrokerService> logger)
+		public FSBrokerService(IOptions<Service01Option> bufferOption, IValidateService validateService, ILogger<FSBrokerService> logger)
 		{
 			_logger = logger;
 			_validateService = validateService;
