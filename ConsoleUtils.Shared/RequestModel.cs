@@ -7,19 +7,28 @@ namespace ConsoleApp.CreateRequests
 		private string _url { get; set; } = "http://localhost:5019/api/rate/{key}/{bank}";
 		private string _key { get; set; } = "";
 		private string _bank { get; set; } = "000";
+		private int _countRequest { get; set; } = 1;
+		private bool _useIndexBank { get; set; } = false;
 
 		public RequestModel()
 		{
 			UseKey01();
+			UseIndexBank();
 		}
 
 		public async Task SendAsync()
 		{
+			foreach (var indexRequest in Enumerable.Range(1, _countRequest)) {
+				_ = SendAsyncOneRequest(indexRequest);
+			}
+		}
+		public async Task SendAsyncOneRequest(int indexRequest)
+		{
 			var url = _url
 				.Replace("{key}",_key)
-				.Replace("{bank}", _bank);
+				.Replace("{bank}", _bank + (_useIndexBank ? indexRequest.ToString():""));
 
-			Console.WriteLine($"Send API request {url}");
+			Console.WriteLine($"Send API Request [{indexRequest}] {url}");
 
 			var result = "error";
 			int code = -1;
@@ -58,6 +67,24 @@ namespace ConsoleApp.CreateRequests
 		public RequestModel UseBank(string bank)
 		{
 			_bank = bank;
+
+			return this;
+		}
+		public RequestModel SetCountRequest(int countRequest)
+		{
+			_countRequest = countRequest;
+
+			return this;
+		}
+		public RequestModel UseIndexBank()
+		{
+			_useIndexBank = true;
+
+			return this;
+		}
+		public RequestModel DisableIndexBank()
+		{
+			_useIndexBank = false;
 
 			return this;
 		}
