@@ -14,5 +14,10 @@
 
 			System.Console.WriteLine($"done {sec} sec");
 		}
+		public static void PreeAnyKey()
+		{
+			System.Console.WriteLine("Press any key...");
+			System.Console.ReadLine();
+		}
 	}
 }

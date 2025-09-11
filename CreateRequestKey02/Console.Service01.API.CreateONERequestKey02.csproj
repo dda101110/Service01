@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConsoleUtils.Service01.Host\Console.Service01.Host.Shared\Console.Service01.Host.Shared.csproj" />
     <ProjectReference Include="..\ConsoleUtils.Shared\Console.Service01.API.Shared.csproj" />
   </ItemGroup>
 

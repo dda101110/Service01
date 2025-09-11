@@ -1,35 +1,21 @@
 ﻿using Console.Service01.Host.Shared;
 using ConsoleApp.CreateResponse;
 
-System.Console.WriteLine("Start application ,version 2.3");
+System.Console.WriteLine("Start application ,version 2.4");
 
+string path = "d:\\broker";
 string message = "GET http://service01.matchete.ru/api/rate/USD/EUR/TBC";
 var countRequest = 5;
-var wait = 5;
+var pauseSec = 5;
 
 HostClient client = new();
-
 await client.UseHost("127.0.0.1")
 	.UsePort(7777)
 	.SetCountRequest(countRequest)
 	.SendAsync(message);
 
-System.Console.WriteLine($"Pause {wait} sec...");
+Pause.Delay(pauseSec);
 
-Thread.Sleep(1000 * wait);
+FSBrokerResponse.AllFromPath(path);
 
-var path = "d:\\broker";
-var list = Directory.GetFiles(path);
-
-System.Console.WriteLine($"Create {list.Count()} responses");
-
-foreach (var file in list)
-{
-	new FSBrokerResponse()
-		.UseFile(file)
-		.UseDelay(1)
-		.Make();
-}
-
-System.Console.WriteLine("Press any key...");
-System.Console.ReadLine();
+Pause.PreeAnyKey();
