@@ -34,5 +34,19 @@
 
 			return this;
 		}
+		public static void AllFromPath(string path)
+		{
+			var list = Directory.GetFiles(path);
+
+			Console.WriteLine($"Create {list.Count()} responses");
+
+			foreach (var file in list)
+			{
+				new FSBrokerResponse()
+					.UseFile(file)
+					.UseDelay(1)
+					.Make();
+			}
+		}
 	}
 }

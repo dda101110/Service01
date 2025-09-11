@@ -17,11 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.CreateResponse",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleUtils.Service01.API", "ConsoleUtils.Service01.API", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateRequestKey01", "CreateRequestKey01\CreateRequestKey01.csproj", "{ED013430-648C-4FA3-85A9-B554D6DABA87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.CreateONERequestKey01", "CreateRequestKey01\Console.Service01.API.CreateONERequestKey01.csproj", "{ED013430-648C-4FA3-85A9-B554D6DABA87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateRequestKey02", "CreateRequestKey02\CreateRequestKey02.csproj", "{B471DA16-6E4E-4387-9EB7-E27E7628CF96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.CreateONERequestKey02", "CreateRequestKey02\Console.Service01.API.CreateONERequestKey02.csproj", "{B471DA16-6E4E-4387-9EB7-E27E7628CF96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUtils.Shared", "ConsoleUtils.Shared\ConsoleUtils.Shared.csproj", "{0AAB81E3-2DAC-4B19-983B-F0F69DFE9C53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.Shared", "ConsoleUtils.Shared\Console.Service01.API.Shared.csproj", "{0AAB81E3-2DAC-4B19-983B-F0F69DFE9C53}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service01.Features", "Service01.Features\Service01.Features.csproj", "{29CC5112-E776-444E-AC39-094FB9919F54}"
 EndProject
@@ -29,11 +29,33 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service01.Host", "Service01
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleUtils.Service01.Host", "ConsoleUtils.Service01.Host", "{2330BBE7-20F8-41E7-8320-19060E1259EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.CreateRequestKey01", "ConsoleUtils.Service01.Host\Console.Service01.Host.CreateRequestKey01\Console.Service01.Host.CreateRequestKey01.csproj", "{9573AE3B-38A9-49AF-B8B0-2A660D23B766}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.CreateONERequestKey01", "ConsoleUtils.Service01.Host\Console.Service01.Host.CreateRequestKey01\Console.Service01.Host.CreateONERequestKey01.csproj", "{9573AE3B-38A9-49AF-B8B0-2A660D23B766}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.CreateRequestKey02", "ConsoleUtils.Service01.Host\Console.Service01.Host.CreateRequestKey02\Console.Service01.Host.CreateRequestKey02.csproj", "{7485E411-73D1-4DFE-B671-C05D8B3770C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.CreateONERequestKey02", "ConsoleUtils.Service01.Host\Console.Service01.Host.CreateRequestKey02\Console.Service01.Host.CreateONERequestKey02.csproj", "{7485E411-73D1-4DFE-B671-C05D8B3770C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.Shared", "ConsoleUtils.Service01.Host\Console.Service01.Host.Shared\Console.Service01.Host.Shared.csproj", "{510FABFD-F404-4A1D-AE39-39974C91BB5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.Create1000RequestKey01", "ConsoleUtils.Service01.API\Create1000RequestKey01\Console.Service01.API.Create1000RequestKey01.csproj", "{3B01D51C-3144-4B1F-96F7-3920BB31A82E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.Create5000RequestKey01", "ConsoleUtils.Service01.API\Create5000RequestKey01\Console.Service01.API.Create5000RequestKey01.csproj", "{E59DFC1C-2B84-4503-81F3-022500AEB838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.Create1000RequestKey02", "ConsoleUtils.Service01.API\Create1000RequestKey02\Console.Service01.API.Create1000RequestKey02.csproj", "{67A574C4-DF8A-421D-8FB8-A73C7B17D843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.Create5000RequestKey02", "ConsoleUtils.Service01.API\Create5000RequestKey02\Console.Service01.API.Create5000RequestKey02.csproj", "{483AF6DE-5C5A-4EB3-9AA6-BC41618753DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.CreatePlan01", "ConsoleUtils.Service01.API\CreateRequestKey01Plan01\Console.Service01.API.CreatePlan01.csproj", "{E6736900-C30C-45AA-A8A9-3725ABC8ACC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.CreatePlan01", "ConsoleUtils.Service01.Host\Console.Service01.Host.CreatePlan01\Console.Service01.Host.CreatePlan01.csproj", "{461F1435-AF36-4EDB-AB05-3307B73CE722}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.CreatePlan02", "ConsoleUtils.Service01.Host\Console.Service01.Host.CreatePlan02\Console.Service01.Host.CreatePlan02.csproj", "{E0CDE7A5-C2BB-4DBC-91DC-98A14A072A94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.CreatePlan03", "ConsoleUtils.Service01.Host\Console.Service01.Host.CreatePlan03\Console.Service01.Host.CreatePlan03.csproj", "{9C117606-8A1A-44FA-AC69-278C14447FBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.CreatePlan04", "ConsoleUtils.Service01.Host\Console.Service01.Host.CreatePlan04\Console.Service01.Host.CreatePlan04.csproj", "{7FE52D07-86D5-41FB-88E6-9E052024F8C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.CreatePlan05", "ConsoleUtils.Service01.Host\Console.Service01.Host.CreatePlan05\Console.Service01.Host.CreatePlan05.csproj", "{6736C598-1F0D-4353-A083-09342BD55568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.Host.CreatePlan06", "ConsoleUtils.Service01.Host\Console.Service01.Host.CreatePlan06\Console.Service01.Host.CreatePlan06.csproj", "{8D0420DD-CF10-4A36-97C6-FB970EA64EF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +119,50 @@ Global
 		{510FABFD-F404-4A1D-AE39-39974C91BB5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{510FABFD-F404-4A1D-AE39-39974C91BB5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{510FABFD-F404-4A1D-AE39-39974C91BB5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B01D51C-3144-4B1F-96F7-3920BB31A82E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B01D51C-3144-4B1F-96F7-3920BB31A82E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B01D51C-3144-4B1F-96F7-3920BB31A82E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B01D51C-3144-4B1F-96F7-3920BB31A82E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59DFC1C-2B84-4503-81F3-022500AEB838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59DFC1C-2B84-4503-81F3-022500AEB838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59DFC1C-2B84-4503-81F3-022500AEB838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59DFC1C-2B84-4503-81F3-022500AEB838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67A574C4-DF8A-421D-8FB8-A73C7B17D843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67A574C4-DF8A-421D-8FB8-A73C7B17D843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67A574C4-DF8A-421D-8FB8-A73C7B17D843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67A574C4-DF8A-421D-8FB8-A73C7B17D843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{483AF6DE-5C5A-4EB3-9AA6-BC41618753DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{483AF6DE-5C5A-4EB3-9AA6-BC41618753DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{483AF6DE-5C5A-4EB3-9AA6-BC41618753DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{483AF6DE-5C5A-4EB3-9AA6-BC41618753DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6736900-C30C-45AA-A8A9-3725ABC8ACC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6736900-C30C-45AA-A8A9-3725ABC8ACC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6736900-C30C-45AA-A8A9-3725ABC8ACC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6736900-C30C-45AA-A8A9-3725ABC8ACC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{461F1435-AF36-4EDB-AB05-3307B73CE722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461F1435-AF36-4EDB-AB05-3307B73CE722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461F1435-AF36-4EDB-AB05-3307B73CE722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461F1435-AF36-4EDB-AB05-3307B73CE722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0CDE7A5-C2BB-4DBC-91DC-98A14A072A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0CDE7A5-C2BB-4DBC-91DC-98A14A072A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0CDE7A5-C2BB-4DBC-91DC-98A14A072A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0CDE7A5-C2BB-4DBC-91DC-98A14A072A94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C117606-8A1A-44FA-AC69-278C14447FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C117606-8A1A-44FA-AC69-278C14447FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C117606-8A1A-44FA-AC69-278C14447FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C117606-8A1A-44FA-AC69-278C14447FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FE52D07-86D5-41FB-88E6-9E052024F8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FE52D07-86D5-41FB-88E6-9E052024F8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE52D07-86D5-41FB-88E6-9E052024F8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FE52D07-86D5-41FB-88E6-9E052024F8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6736C598-1F0D-4353-A083-09342BD55568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6736C598-1F0D-4353-A083-09342BD55568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6736C598-1F0D-4353-A083-09342BD55568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6736C598-1F0D-4353-A083-09342BD55568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0420DD-CF10-4A36-97C6-FB970EA64EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0420DD-CF10-4A36-97C6-FB970EA64EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0420DD-CF10-4A36-97C6-FB970EA64EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0420DD-CF10-4A36-97C6-FB970EA64EF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +174,17 @@ Global
 		{9573AE3B-38A9-49AF-B8B0-2A660D23B766} = {2330BBE7-20F8-41E7-8320-19060E1259EA}
 		{7485E411-73D1-4DFE-B671-C05D8B3770C8} = {2330BBE7-20F8-41E7-8320-19060E1259EA}
 		{510FABFD-F404-4A1D-AE39-39974C91BB5F} = {2330BBE7-20F8-41E7-8320-19060E1259EA}
+		{3B01D51C-3144-4B1F-96F7-3920BB31A82E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{E59DFC1C-2B84-4503-81F3-022500AEB838} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{67A574C4-DF8A-421D-8FB8-A73C7B17D843} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{483AF6DE-5C5A-4EB3-9AA6-BC41618753DF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{E6736900-C30C-45AA-A8A9-3725ABC8ACC8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{461F1435-AF36-4EDB-AB05-3307B73CE722} = {2330BBE7-20F8-41E7-8320-19060E1259EA}
+		{E0CDE7A5-C2BB-4DBC-91DC-98A14A072A94} = {2330BBE7-20F8-41E7-8320-19060E1259EA}
+		{9C117606-8A1A-44FA-AC69-278C14447FBF} = {2330BBE7-20F8-41E7-8320-19060E1259EA}
+		{7FE52D07-86D5-41FB-88E6-9E052024F8C9} = {2330BBE7-20F8-41E7-8320-19060E1259EA}
+		{6736C598-1F0D-4353-A083-09342BD55568} = {2330BBE7-20F8-41E7-8320-19060E1259EA}
+		{8D0420DD-CF10-4A36-97C6-FB970EA64EF9} = {2330BBE7-20F8-41E7-8320-19060E1259EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6BC5303-9E2A-406F-9FF1-FEFF1FBCBF94}

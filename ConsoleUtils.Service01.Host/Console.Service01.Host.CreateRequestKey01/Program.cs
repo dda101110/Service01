@@ -10,5 +10,4 @@ await client.UseHost("127.0.0.1")
 	.UsePort(7777)
 	.SendAsync(message);
 
-System.Console.WriteLine("Press any key...");
-System.Console.ReadLine();
+Pause.PreeAnyKey();
