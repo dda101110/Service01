@@ -13,8 +13,26 @@
 - Валидация данных
 - Обработка ошибок (формат, таймаут)
 
+## Tructure
 
-## Tech
+Структура проекта состоит:
+* API Service - проект Service01.API
+    * сервис имеет endpoint /api/[version]/rate/[currency1]/[currency2]/[bank]
+    возвращает курс валют в банке, где:
+    [version] - версия API
+        * версия v1 - работает напрямую через BrokerService
+        * версия v2 - работает через BufferService ("схлопывание" запросов по времени)
+        * версия v3 - работает через BrokerService и вызывается через mediatr
+        
+      [currency1] - строковое значение валюты, например USD/EUR/CAD/RUB
+      [currency2] - строковое значение валюты
+      [bank] - строковое значение банка (SWIFT)
+      example: `/api/v3/rate/USD/EUR/TBC`
+* TCP Service - проект Service01.Host
+    * сервис прослушивает запросы на порту 7777
+    формат сообщения `[METHOD] [PATH]`
+
+## Tech scheme
 Схема обработки данных представлена на рисунке
 
 ![This is a scheme image.](/images/scheme.png)
@@ -41,7 +59,7 @@ HealthCheck UI доступен по url `/healthchecks-ui`
 
 ## Links
 
-По ссылке развернуто данное приложение и можно ознакомится с данными [service01.mathete.ru](https://service01.matchete.ru/metrics)
+По ссылке развернуто данное приложение и можно ознакомится с данными [service01.mathete.ru](https://service01.matchete.ru/)
 
 ## License
 
