@@ -11,7 +11,7 @@ namespace Service01.Services.BufferService
 		private IBrokerService _brokerService { get; set; }
 		private Service01Option _bufferOption { get; set; }
 		private ILogger<BufferService> _logger { get; set; }
-		private SemaphoreSlim _semaphore { get; set; } = new SemaphoreSlim(1, 1);
+		private SemaphoreSlim _semaphore { get; set; } = new SemaphoreSlim(1);
 
 		public BufferService(IBrokerService brokerService, IOptions<Service01Option> bufferOption, ILogger<BufferService> logger)
 		{
@@ -24,7 +24,7 @@ namespace Service01.Services.BufferService
 
 		public async Task<RateResponseModel?> GetRateAsync(RateRequestModel request)
 		{
-			var keyRequest = GetKey(request);
+			string keyRequest = GetKey(request);
 			var result = new RateResponseModel();
 
 			var dt = DateTime.Now;
@@ -83,7 +83,7 @@ namespace Service01.Services.BufferService
 
 		private string GetKey(RateRequestModel request)
 		{
-			var result = request.Currency1 + request.Currency2;
+			string result = request.Currency1 + request.Currency2;
 
 			return result;
 		}
