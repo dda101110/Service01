@@ -10,6 +10,7 @@ namespace Console.Service01.Host.Shared
 		private int _port;
 		private int _countRequest { get; set; } = 1;
 		private bool _useIndexBank {  get; set; } = false;
+		private int _startIndex { get; set; } = 1;
 		private ConcurrentDictionary<int, DateTime> _timeRequests = new();
 
 		public HostClient()
@@ -47,9 +48,15 @@ namespace Console.Service01.Host.Shared
 
 			return this;
 		}
+		public HostClient SetStartIndex(int startIndex)
+		{
+			_startIndex = startIndex;
+
+			return this;
+		}
 		public async Task SendAsync(string message)
 		{
-			foreach (var indexRequest in Enumerable.Range(1, _countRequest))
+			foreach (var indexRequest in Enumerable.Range(_startIndex, _countRequest))
 			{
 				_ = SendOneRequestAsync(message, indexRequest);
 			}
@@ -60,7 +67,7 @@ namespace Console.Service01.Host.Shared
 			{
 				using TcpClient client = new TcpClient(_host, _port);
 				
-				System.Console.WriteLine($"Connected[{indexRequest}] to server at {_host}:{_port}");
+				System.Console.WriteLine($"Connected[{indexRequest:00000}] to server at {_host}:{_port}");
 
 				NetworkStream stream = client.GetStream();
 				using var reader = new StreamReader(stream, Encoding.UTF8, leaveOpen: true);
@@ -81,18 +88,18 @@ namespace Console.Service01.Host.Shared
 
 				await writer.WriteLineAsync(sendMessage);
 
-				System.Console.WriteLine($"Sent[{indexRequest}][{dtNow.ToString("HH:mm:ss")}]: {sendMessage}");
+				System.Console.WriteLine($"Sent[{indexRequest:00000}][{dtNow.ToString("HH:mm:ss")}]: {sendMessage}");
 
 				string? receivedMessage = await reader.ReadLineAsync();
 
 				dtNow = DateTime.Now;
 				_timeRequests.Remove(indexRequest, out var dtStart);
 
-				System.Console.WriteLine($"Received[{indexRequest}][{dtStart.ToString("HH:mm:ss")}-{dtNow.ToString("HH:mm:ss")}][{(dtNow-dtStart).TotalSeconds} sec]: {receivedMessage}");
+				System.Console.WriteLine($"Received[{indexRequest:00000}][{dtStart.ToString("HH:mm:ss")}-{dtNow.ToString("HH:mm:ss")}][{(dtNow-dtStart).TotalSeconds:000.00} sec]: {receivedMessage}");
 			}
 			catch (Exception ex)
 			{
-				System.Console.WriteLine($"Error[{indexRequest}]: {ex.Message}");
+				System.Console.WriteLine($"Error[{indexRequest:00000}]: {ex.Message}");
 			}
 		}
 	}
