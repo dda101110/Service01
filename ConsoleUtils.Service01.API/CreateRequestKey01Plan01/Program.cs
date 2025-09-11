@@ -1,19 +1,19 @@
 ﻿using ConsoleApp.CreateRequests;
 using ConsoleApp.CreateResponse;
 
-var countRequest = 50;
-var wait = 5;
+var countRequest = 1000;
+var wait = 20;
 
-Console.WriteLine("Start application ,version 1.8");
+Console.WriteLine("Start application ,version 1.11");
 Console.WriteLine($"Create Requests to API Key01 from Plan01");
 Console.WriteLine($"\r\nCreate {countRequest} requests");
 
-await new RequestAPIModel()
+await new APIClient()
 	.UseKey01()
 	.SetCountRequest(countRequest)
 	.SendAsync();
 
-Console.WriteLine($"Wait {wait} sec");
+System.Console.WriteLine($"Pause {wait} sec...");
 
 Thread.Sleep(1000 * wait);
 

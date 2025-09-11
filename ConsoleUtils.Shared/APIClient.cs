@@ -2,7 +2,7 @@
 
 namespace ConsoleApp.CreateRequests
 {
-	public class RequestAPIModel
+	public class APIClient
 	{
 		private string _url { get; set; } = "http://localhost:5019/api/v1/rate/{key}/{bank}";
 		private string _key { get; set; } = "";
@@ -10,7 +10,7 @@ namespace ConsoleApp.CreateRequests
 		private int _countRequest { get; set; } = 1;
 		private bool _useIndexBank { get; set; } = false;
 
-		public RequestAPIModel()
+		public APIClient()
 		{
 			UseKey01();
 			UseIndexBank();
@@ -19,10 +19,10 @@ namespace ConsoleApp.CreateRequests
 		public async Task SendAsync()
 		{
 			foreach (var indexRequest in Enumerable.Range(1, _countRequest)) {
-				_ = SendAsyncOneRequest(indexRequest);
+				_ = SendOneRequestAsync(indexRequest);
 			}
 		}
-		public async Task SendAsyncOneRequest(int indexRequest)
+		public async Task SendOneRequestAsync(int indexRequest)
 		{
 			var url = _url
 				.Replace("{key}",_key)
@@ -47,42 +47,42 @@ namespace ConsoleApp.CreateRequests
 			}
 			catch (FlurlHttpException ex)
 			{
-				result = $"Exception: [{ex.StatusCode}] [{body}]";
+				result = $"Exception: [{ex.StatusCode}] [{body}] [{ex.Message}]";
 			}
 
 			Console.WriteLine($"RESPONSE from {url}: {result}");
 		}
-		public RequestAPIModel UseKey01()
+		public APIClient UseKey01()
 		{
 			_key = "USD/EUR";
 
 			return this;
 		}
-		public RequestAPIModel UseKey02()
+		public APIClient UseKey02()
 		{
 			_key = "CAD/RUB";
 
 			return this;
 		}
-		public RequestAPIModel UseBank(string bank)
+		public APIClient UseBank(string bank)
 		{
 			_bank = bank;
 
 			return this;
 		}
-		public RequestAPIModel SetCountRequest(int countRequest)
+		public APIClient SetCountRequest(int countRequest)
 		{
 			_countRequest = countRequest;
 
 			return this;
 		}
-		public RequestAPIModel UseIndexBank()
+		public APIClient UseIndexBank()
 		{
 			_useIndexBank = true;
 
 			return this;
 		}
-		public RequestAPIModel DisableIndexBank()
+		public APIClient DisableIndexBank()
 		{
 			_useIndexBank = false;
 
