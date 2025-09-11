@@ -2,10 +2,11 @@
 using ConsoleApp.CreateRequests;
 
 System.Console.WriteLine("Start application ,version 1.5");
-System.Console.WriteLine("Create ONE Request to API Key01");
+System.Console.WriteLine("Create 5000 Requests to API Key02");
 
 await new APIClient()
-	.UseKey01()
+	.UseKey02()
+	.SetCountRequest(5000)
 	.SendAsync();
 
 Pause.PreeAnyKey();

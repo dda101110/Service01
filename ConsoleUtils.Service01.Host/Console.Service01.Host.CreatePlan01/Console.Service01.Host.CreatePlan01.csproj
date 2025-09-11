@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleUtils.Shared\ConsoleUtils.Shared.csproj" />
+    <ProjectReference Include="..\..\ConsoleApp.CreateResponse\ConsoleApp.CreateResponse.csproj" />
+    <ProjectReference Include="..\Console.Service01.Host.Shared\Console.Service01.Host.Shared.csproj" />
   </ItemGroup>
 
 </Project>

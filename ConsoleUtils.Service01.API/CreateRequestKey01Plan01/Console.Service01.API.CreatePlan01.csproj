@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ConsoleApp.CreateResponse\ConsoleApp.CreateResponse.csproj" />
+    <ProjectReference Include="..\..\ConsoleUtils.Service01.Host\Console.Service01.Host.Shared\Console.Service01.Host.Shared.csproj" />
+    <ProjectReference Include="..\..\ConsoleUtils.Shared\Console.Service01.API.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
