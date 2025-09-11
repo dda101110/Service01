@@ -2,15 +2,15 @@
 
 namespace ConsoleApp.CreateRequests
 {
-	public class RequestModel
+	public class RequestAPIModel
 	{
-		private string _url { get; set; } = "http://localhost:5019/api/rate/{key}/{bank}";
+		private string _url { get; set; } = "http://localhost:5019/api/v1/rate/{key}/{bank}";
 		private string _key { get; set; } = "";
 		private string _bank { get; set; } = "000";
 		private int _countRequest { get; set; } = 1;
 		private bool _useIndexBank { get; set; } = false;
 
-		public RequestModel()
+		public RequestAPIModel()
 		{
 			UseKey01();
 			UseIndexBank();
@@ -52,37 +52,37 @@ namespace ConsoleApp.CreateRequests
 
 			Console.WriteLine($"RESPONSE from {url}: {result}");
 		}
-		public RequestModel UseKey01()
+		public RequestAPIModel UseKey01()
 		{
 			_key = "USD/EUR";
 
 			return this;
 		}
-		public RequestModel UseKey02()
+		public RequestAPIModel UseKey02()
 		{
 			_key = "CAD/RUB";
 
 			return this;
 		}
-		public RequestModel UseBank(string bank)
+		public RequestAPIModel UseBank(string bank)
 		{
 			_bank = bank;
 
 			return this;
 		}
-		public RequestModel SetCountRequest(int countRequest)
+		public RequestAPIModel SetCountRequest(int countRequest)
 		{
 			_countRequest = countRequest;
 
 			return this;
 		}
-		public RequestModel UseIndexBank()
+		public RequestAPIModel UseIndexBank()
 		{
 			_useIndexBank = true;
 
 			return this;
 		}
-		public RequestModel DisableIndexBank()
+		public RequestAPIModel DisableIndexBank()
 		{
 			_useIndexBank = false;
 

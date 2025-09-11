@@ -1,28 +1,50 @@
 ﻿using ConsoleApp.CreateRequests;
+using ConsoleApp.CreateResponse;
 
-Console.WriteLine("Start application ,version 1.7");
-Console.WriteLine("Create Requests to API Key01 from Plan01");
+var countRequest = 50;
+var wait = 5;
 
-await new RequestModel()
+Console.WriteLine("Start application ,version 1.8");
+Console.WriteLine($"Create Requests to API Key01 from Plan01");
+Console.WriteLine($"\r\nCreate {countRequest} requests");
+
+await new RequestAPIModel()
 	.UseKey01()
-	.SetCountRequest(5)
+	.SetCountRequest(countRequest)
 	.SendAsync();
 
-await new RequestModel()
-	.UseKey01()
-	.UseBank("ru01")
-	.DisableIndexBank()
-	.SetCountRequest(1)
-	.SendAsync();
+Console.WriteLine($"Wait {wait} sec");
 
-await Task.Delay(1000);
+Thread.Sleep(1000 * wait);
 
-await new RequestModel()
-	.UseKey01()
-	.UseBank("ru01")
-	.DisableIndexBank()
-	.SetCountRequest(1)
-	.SendAsync();
+var path = "d:\\broker";
+var list = Directory.GetFiles(path);
+
+Console.WriteLine($"Create {list.Count()} responses");
+
+foreach (var file in list)
+{
+	new FSBrokerResponse()
+		.UseFile(file)
+		.UseDelay(50)
+		.Make();
+}
+
+//await new RequestModel()
+//	.UseKey01()
+//	.UseBank("ru01")
+//	.DisableIndexBank()
+//	.SetCountRequest(1)
+//	.SendAsync();
+
+//await Task.Delay(1000);
+
+//await new RequestModel()
+//	.UseKey01()
+//	.UseBank("ru01")
+//	.DisableIndexBank()
+//	.SetCountRequest(1)
+//	.SendAsync();
 
 Console.WriteLine("Press any key...");
 Console.ReadLine();

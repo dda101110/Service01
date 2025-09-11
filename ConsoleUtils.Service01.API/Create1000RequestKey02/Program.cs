@@ -3,7 +3,7 @@
 Console.WriteLine("Start application ,version 1.5");
 Console.WriteLine("Create 1000 Requests to API Key02");
 
-await new RequestModel()
+await new RequestAPIModel()
 	.UseKey02()
 	.SetCountRequest(1000)
 	.SendAsync();

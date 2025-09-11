@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.Creat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.Create5000RequestKey02", "ConsoleUtils.Service01.API\Create5000RequestKey02\Console.Service01.API.Create5000RequestKey02.csproj", "{483AF6DE-5C5A-4EB3-9AA6-BC41618753DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.CreateRequestKey01Plan01", "ConsoleUtils.Service01.API\CreateRequestKey01Plan01\Console.Service01.API.CreateRequestKey01Plan01.csproj", "{E6736900-C30C-45AA-A8A9-3725ABC8ACC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Service01.API.CreatePlan01", "ConsoleUtils.Service01.API\CreateRequestKey01Plan01\Console.Service01.API.CreatePlan01.csproj", "{E6736900-C30C-45AA-A8A9-3725ABC8ACC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
